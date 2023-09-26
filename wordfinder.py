@@ -1,3 +1,6 @@
+from random import choice as random_choice
+
+
 class WordFinder:
     """Word Finder: finds random words from a dictionary.
     >>> new_word = WordFinder('/usr/share/dict/words')
@@ -5,6 +8,7 @@ class WordFinder:
     >>> new_word.word_reader('/usr/share/dict/words')
     True
     """
+
     def __init__(self, path):
         self.words = self.word_reader(path)
 
@@ -18,4 +22,6 @@ class WordFinder:
         return words
 
     def random(self):
-        pass
+        ran_word = random_choice(self.words)
+        print(ran_word)
+        return ran_word
